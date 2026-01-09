@@ -108,4 +108,145 @@ section{
 h2{
   font-family:'Bebas Neue',sans-serif;
   font-size:3rem;
-  letter-spacing
+  letter-spacing:3px;
+  margin-bottom:40px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:rgba(255,255,255,.06);
+  backdrop-filter:blur(15px);
+  border-radius:24px;
+  padding:30px;
+  box-shadow:0 20px 50px rgba(0,0,0,.4);
+}
+
+footer{
+  padding:60px;
+  text-align:center;
+  opacity:.7;
+}
+
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:#fff;
+  padding:14px 20px;
+  border-radius:50px;
+  font-weight:600;
+  text-decoration:none;
+  z-index:999;
+}
+
+@media(max-width:768px){
+  header{padding:20px}
+  nav{display:none}
+  .hero h1{font-size:3.5rem}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <strong>BANDA BYO</strong>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#videos">Vídeos</a>
+    <a href="#playlist">Música</a>
+    <a href="#shows">Shows</a>
+    <a href="#contact">Contato</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <h1>BANDA BYO</h1>
+  <p id="slogan">A melhor banda pop da Baixada Fluminense</p>
+  <a href="#playlist" class="btn">Ouça agora</a>
+</section>
+
+<section data-aos="fade-up">
+  <h2>Estatísticas</h2>
+  <div class="grid" id="stats"></div>
+</section>
+
+<section id="videos" data-aos="fade-up">
+  <h2>Vídeos</h2>
+  <iframe width="100%" height="420"
+    src="https://www.youtube.com/embed/VIDEO_ID"
+    frameborder="0" allowfullscreen></iframe>
+</section>
+
+<section id="playlist" data-aos="fade-up">
+  <h2>Músicas</h2>
+  <audio controls src="media/song.mp3"></audio><br><br>
+  <iframe style="border-radius:12px"
+    src="https://open.spotify.com/embed/artist/ARTIST_ID"
+    width="100%" height="352" frameBorder="0"></iframe>
+</section>
+
+<section id="shows" data-aos="fade-up">
+  <h2>Próximos Shows</h2>
+  <div class="grid" id="showsList"></div>
+</section>
+
+<section id="contact" data-aos="fade-up">
+  <h2>Contato</h2>
+  <form action="https://formspree.io/f/SEU_ID" method="POST">
+    <input type="text" name="name" placeholder="Nome" required><br><br>
+    <input type="email" name="email" placeholder="Email" required><br><br>
+    <textarea name="message" placeholder="Mensagem" required></textarea><br><br>
+    <button class="btn">Enviar</button>
+  </form>
+</section>
+
+<footer>
+  <p>© Banda BYO • Todos os direitos reservados</p>
+</footer>
+
+<a class="whatsapp"
+   href="https://wa.me/5521999999999?text=Olá!%20Quero%20contratar%20a%20Banda%20BYO"
+   target="_blank">
+💬 WhatsApp
+</a>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init();
+
+const translations={
+  pt:"A melhor banda pop da Baixada Fluminense",
+  en:"The best pop band from Rio de Janeiro"
+};
+
+document.getElementById("slogan").innerText=translations.pt;
+
+fetch("stats.json").then(r=>r.json()).then(d=>{
+  const s=document.getElementById("stats");
+  d.forEach(i=>{
+    s.innerHTML+=`<div class="card"><h3>${i.value}</h3><p>${i.label}</p></div>`;
+  });
+});
+
+fetch("shows.json").then(r=>r.json()).then(d=>{
+  const l=document.getElementById("showsList");
+  d.forEach(s=>{
+    l.innerHTML+=`
+    <div class="card">
+      <strong>${s.date}</strong><br>
+      ${s.city} - ${s.venue}<br><br>
+      <a class="btn" href="${s.tickets}" target="_blank">Ingressos</a>
+    </div>`;
+  });
+});
+</script>
+
+</body>
+</html>
