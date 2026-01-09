@@ -1,34 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-BR" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Banda BYO | Site Oficial</title>
+<title>Banda BYO | Site Oficial</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Site oficial da Banda BYO. Shows, músicas, vídeos, press kit e contato.">
-  <meta name="keywords" content="Banda BYO, banda pop, shows, música, press kit">
+<meta name="description" content="Site oficial da Banda BYO. Shows, músicas, vídeos, press kit e contato.">
+<meta name="keywords" content="Banda BYO, banda pop, shows, música">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Banda BYO">
-  <meta property="og:description" content="A melhor banda pop da Baixada Fluminense">
-  <meta property="og:type" content="website">
+<meta property="og:title" content="Banda BYO">
+<meta property="og:description" content="A melhor banda pop da Baixada Fluminense">
+<meta property="og:type" content="website">
 
-  <!-- PWA -->
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#ff2a6d">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <!-- AOS -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <style>
+<style>
 :root{
   --dark:#0b0b0f;
   --pink:#ff2a6d;
@@ -42,70 +31,77 @@ body{
   color:#fff;
 }
 
-<header>
-  <h2>BYO</h2>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#shows">Shows</a>
-    <a href="#musica">Música</a>
-    <a href="#videos">Vídeos</a>
-    <a href="#contato">Contato</a>
-  </nav>
-</header>
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:20px 60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  backdrop-filter:blur(10px);
+  background:rgba(0,0,0,.5);
+  z-index:100;
+}
 
-<section class="hero" id="home">
-  <div>
-    <h1>BANDA BYO</h1>
-    <p>Pop vibrante direto da Baixada Fluminense</p>
-    <a href="#musica" class="btn">Ouça agora</a>
-  </div>
-</section>
+nav a{
+  margin:0 15px;
+  text-decoration:none;
+  color:#fff;
+  font-weight:500;
+}
 
-<section id="musica">
-  <h2>Músicas</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Single 1</h3>
-      <p>Ouça no Spotify</p>
-    </div>
-    <div class="card">
-      <h3>Single 2</h3>
-      <p>Ouça no Spotify</p>
-    </div>
-    <div class="card">
-      <h3>Single 3</h3>
-      <p>Ouça no Spotify</p>
-    </div>
-  </div>
-</section>
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:linear-gradient(135deg,#ff2a6d,#05d9e8);
+}
 
-<section id="shows">
-  <h2>Próximos Shows</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>29/11</h3>
-      <p>Bar Maria Portuguesa</p>
-      <a class="btn" href="#">Ingressos</a>
-    </div>
-  </div>
-</section>
+.hero h1{
+  font-size:4rem;
+}
 
-<section id="contato">
-  <h2>Contato</h2>
-  <div class="grid">
-    <div class="card">
-      <p>Email: contato@bandabyo.com</p>
-      <p>Instagram: @bandabyo</p>
-    </div>
-  </div>
-</section>
+.btn{
+  margin-top:25px;
+  padding:14px 34px;
+  border-radius:40px;
+  background:#000;
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+}
 
-<footer>
-  <p>© Banda BYO • Todos os direitos reservados</p>
-</footer>
+section{
+  padding:120px 60px;
+  max-width:1200px;
+  margin:auto;
+}
 
-</body>
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
 
+.card{
+  background:#111;
+  padding:30px;
+  border-radius:20px;
+}
+
+footer{
+  padding:60px;
+  text-align:center;
+  opacity:.7;
+}
+</style>
+</head>
+
+<body>
 
 <header>
   <strong>BANDA BYO</strong>
@@ -117,51 +113,40 @@ body{
     <a href="#contact">Contato</a>
     <a href="#press">Press Kit</a>
   </nav>
-  <div>
-    <button class="btn" onclick="toggleTheme()">🌙</button>
-    <button class="btn" onclick="toggleLang()">PT / EN</button>
-  </div>
 </header>
 
-<!-- WhatsApp -->
-<a href="https://wa.me/5521999999999?text=Olá,%20quero%20contratar%20a%20Banda%20BYO"
-   target="_blank"
-   style="position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;
-   padding:14px 18px;border-radius:50px;font-weight:600;text-decoration:none;z-index:999;">
-💬 WhatsApp
-</a>
-
-<section class="hero" id="home" data-aos="fade-up">
-  <h1>Banda BYO</h1>
+<section class="hero" id="home">
+  <h1>BANDA BYO</h1>
   <p id="slogan">A melhor banda pop da Baixada Fluminense</p>
+  <a class="btn" href="#playlist">Ouça agora</a>
 </section>
 
-<section data-aos="fade-up">
+<section>
   <h2>Estatísticas</h2>
   <div class="grid" id="stats"></div>
 </section>
 
-<section id="videos" data-aos="fade-up">
+<section id="videos">
   <h2>Vídeos</h2>
   <iframe width="100%" height="400"
     src="https://www.youtube.com/embed/VIDEO_ID"
     frameborder="0" allowfullscreen></iframe>
 </section>
 
-<section id="playlist" data-aos="fade-up">
+<section id="playlist">
   <h2>Músicas</h2>
-  <audio controls src="media/song.mp3"></audio>
+  <audio controls src="media/song.mp3"></audio><br><br>
   <iframe style="border-radius:12px"
     src="https://open.spotify.com/embed/artist/ARTIST_ID"
     width="100%" height="352" frameBorder="0"></iframe>
 </section>
 
-<section id="shows" data-aos="fade-up">
+<section id="shows">
   <h2>Próximos Shows</h2>
-  <div id="showsList"></div>
+  <div class="grid" id="showsList"></div>
 </section>
 
-<section id="contact" data-aos="fade-up">
+<section id="contact">
   <h2>Contato</h2>
   <form action="https://formspree.io/f/SEU_ID" method="POST">
     <input type="text" name="name" placeholder="Nome" required><br><br>
@@ -171,69 +156,32 @@ body{
   </form>
 </section>
 
-<section id="press" data-aos="fade-up">
+<section id="press">
   <h2>Press Kit</h2>
   <a class="btn" href="press/presskit.zip">Download</a>
 </section>
 
 <footer>
-  <div class="social">
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-youtube"></i></a>
-    <a href="#"><i class="fab fa-spotify"></i></a>
-    <a href="mailto:contato@bandabyo.com"><i class="fas fa-envelope"></i></a>
-  </div>
   <p>© Banda BYO</p>
 </footer>
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-  AOS.init();
+AOS.init();
 
-  function toggleTheme(){
-    const t=document.documentElement.getAttribute("data-theme");
-    const n=t==="dark"?"light":"dark";
-    document.documentElement.setAttribute("data-theme",n);
-    localStorage.setItem("theme",n);
-  }
+const translations={
+  pt:"A melhor banda pop da Baixada Fluminense",
+  en:"The best pop band from Rio de Janeiro"
+};
 
-  const translations={
-    pt:"A melhor banda pop da Baixada Fluminense",
-    en:"The best pop band from Rio de Janeiro"
-  };
+let lang=localStorage.getItem("lang")||"pt";
+document.getElementById("slogan").innerText=translations[lang];
 
-  let lang=localStorage.getItem("lang")||"pt";
-  document.getElementById("slogan").innerText=translations[lang];
+fetch("stats.json").then(r=>r.json()).then(d=>{
+  const s=document.getElementById("stats");
+  d.forEach(i=>{
+    s.innerHTML+=`<div class="card"><h3>${i.value}</h3><p>${i.label}</p></div>`;
+  });
+});
 
-  function toggleLang(){
-    lang=lang==="pt"?"en":"pt";
-    localStorage.setItem("lang",lang);
-    document.getElementById("slogan").innerText=translations[lang];
-  }
-
-  fetch("stats.json")
-    .then(r=>r.json())
-    .then(d=>{
-      const s=document.getElementById("stats");
-      d.forEach(i=>{
-        s.innerHTML+=`<div class='card'><h3>${i.value}</h3><p>${i.label}</p></div>`;
-      });
-    });
-
-  fetch("shows.json")
-    .then(r=>r.json())
-    .then(d=>{
-      const l=document.getElementById("showsList");
-      d.forEach(s=>{
-        l.innerHTML+=`
-        <div class="card">
-          <strong>${s.date}</strong><br>
-          ${s.city} - ${s.venue}<br><br>
-          <a class="btn" href="${s.tickets}" target="_blank">Ingressos</a>
-        </div>`;
-      });
-    });
-</script>
-
-</body>
-</html>
+fetch("shows.json").then(r=
