@@ -1,30 +1,31 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Banda BYO | Site Oficial</title>
 
-<meta name="description" content="Banda BYO • Pop vibrante direto da Baixada Fluminense. Shows, músicas, vídeos e contato.">
-<meta name="keywords" content="Banda BYO, banda pop, shows ao vivo, música brasileira">
+<meta name="description" content="Banda BYO – show eclético com visual sertanejo premium. Agenda, vídeos e contato.">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
-<link rel="icon" href="favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 :root{
-  --pink:#ff2a6d;
-  --blue:#05d9e8;
-  --dark:#050508;
+  --bg:#0b0b0f;
+  --gold:#d4af37;
+  --gold-light:#f5d76e;
+  --text:#ffffff;
 }
 
-*{margin:0;padding:0;box-sizing:border-box}
+*{box-sizing:border-box}
 
 body{
+  margin:0;
   font-family:'Poppins',sans-serif;
-  background:#050508;
-  color:#fff;
+  background:var(--bg);
+  color:var(--text);
 }
 
 /* HEADER */
@@ -32,157 +33,119 @@ header{
   position:fixed;
   top:0;
   width:100%;
-  padding:22px 60px;
+  padding:20px 60px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  background:rgba(5,5,8,.85);
-  z-index:1000;
+  background:rgba(0,0,0,.7);
+  backdrop-filter:blur(10px);
+  z-index:100;
 }
 
 header strong{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:34px;
-  letter-spacing:6px;
+  font-size:1.8rem;
+  letter-spacing:3px;
+  color:var(--gold);
 }
 
 nav a{
-  margin-left:26px;
+  margin:0 15px;
   color:#fff;
   text-decoration:none;
   font-weight:500;
-  opacity:.8;
 }
 
-nav a:hover{opacity:1}
+nav a:hover{color:var(--gold-light)}
 
-/* HERO VIDEO */
+/* HERO */
 .hero{
-  position:relative;
   height:100vh;
-  overflow:hidden;
-}
-
-.hero video{
-  position:absolute;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.85));
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-  height:100%;
   display:flex;
-  flex-direction:column;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   text-align:center;
   padding:0 20px;
+  background:
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+    url("https://images.unsplash.com/photo-1518972559570-9ec66cfd5535") center/cover no-repeat;
 }
 
 .hero h1{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:7rem;
-  letter-spacing:10px;
+  font-size:4.5rem;
+  font-weight:900;
+  letter-spacing:6px;
+  color:var(--gold);
 }
 
 .hero p{
-  font-size:1.4rem;
+  font-size:1.3rem;
+  max-width:700px;
+  margin:auto;
   opacity:.9;
 }
 
 /* BUTTON */
 .btn{
-  margin-top:40px;
-  padding:16px 46px;
+  display:inline-block;
+  margin-top:30px;
+  padding:15px 40px;
   border-radius:50px;
-  background:linear-gradient(45deg,var(--pink),var(--blue));
-  color:#fff;
+  background:linear-gradient(45deg,var(--gold),var(--gold-light));
+  color:#000;
   font-weight:700;
   text-decoration:none;
-  box-shadow:0 20px 60px rgba(255,42,109,.6);
-  transition:.4s;
+  transition:.3s;
 }
 
 .btn:hover{
-  transform:scale(1.1);
-  box-shadow:0 30px 90px rgba(5,217,232,.7);
+  transform:scale(1.05);
 }
 
 /* SECTIONS */
 section{
   padding:120px 60px;
-  max-width:1200px;
+  max-width:1300px;
   margin:auto;
 }
 
 section h2{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:3.5rem;
-  letter-spacing:4px;
-  margin-bottom:50px;
+  font-size:2.8rem;
   text-align:center;
+  margin-bottom:60px;
+  color:var(--gold);
 }
 
 /* GRID */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:40px;
 }
 
 .card{
-  background:linear-gradient(145deg,#141420,#0b0b10);
-  padding:40px 30px;
-  border-radius:24px;
+  background:#141414;
+  padding:40px;
+  border-radius:20px;
   text-align:center;
-  box-shadow:0 20px 60px rgba(0,0,0,.8);
-  transition:.4s;
+  box-shadow:0 0 40px rgba(0,0,0,.6);
 }
 
-.card:hover{
-  transform:translateY(-14px);
+.card h3{
+  font-size:1.6rem;
+  margin-bottom:10px;
 }
 
 /* FOOTER */
 footer{
-  background:#030305;
-  padding:60px 20px;
+  background:#000;
+  padding:40px 20px;
   text-align:center;
-  opacity:.8;
 }
 
-/* WHATSAPP */
-.whatsapp{
-  position:fixed;
-  bottom:24px;
-  right:24px;
-  background:#25D366;
-  color:#fff;
-  padding:16px 22px;
-  border-radius:50px;
-  font-weight:700;
-  text-decoration:none;
-  box-shadow:0 15px 40px rgba(0,0,0,.6);
-  z-index:999;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-  header{padding:20px 30px}
-  nav{display:none}
-  .hero h1{font-size:4.5rem}
-  section{padding:90px 30px}
+.social a{
+  margin:0 12px;
+  color:var(--gold);
+  font-size:1.5rem;
 }
 </style>
 </head>
@@ -194,68 +157,58 @@ footer{
   <nav>
     <a href="#home">Home</a>
     <a href="#musica">Música</a>
-    <a href="#videos">Vídeos</a>
     <a href="#shows">Shows</a>
-    <a href="#press">Press</a>
+    <a href="#contato">Contato</a>
   </nav>
 </header>
 
 <section class="hero" id="home">
-  <video autoplay muted loop playsinline>
-    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-  </video>
-  <div class="hero-content">
+  <div>
     <h1>BANDA BYO</h1>
-    <p>Pop vibrante direto da Baixada Fluminense</p>
-    <a href="#musica" class="btn">Ouça agora</a>
+    <p>Show eclético com visual sertanejo premium e energia de grandes palcos</p>
+    <a href="#contato" class="btn">Contratar Show</a>
   </div>
 </section>
 
 <section id="musica">
-  <h2>MÚSICA</h2>
+  <h2>Músicas</h2>
   <div class="grid">
-    <div class="card">🎧 Spotify</div>
-    <div class="card">🎵 Singles</div>
-    <div class="card">💿 EP / Álbum</div>
-  </div>
-</section>
-
-<section id="videos">
-  <h2>VÍDEOS</h2>
-  <div class="grid">
-    <div class="card">YouTube Oficial</div>
-    <div class="card">Clipes & Lives</div>
+    <div class="card"><h3>Single 1</h3><p>Disponível no Spotify</p></div>
+    <div class="card"><h3>Single 2</h3><p>Disponível no Spotify</p></div>
+    <div class="card"><h3>Single 3</h3><p>Disponível no Spotify</p></div>
   </div>
 </section>
 
 <section id="shows">
-  <h2>SHOWS</h2>
+  <h2>Próximos Shows</h2>
   <div class="grid">
     <div class="card">
-      <strong>29/11</strong><br><br>
-      Bar Maria Portuguesa<br><br>
-      <a href="#" class="btn">Ingressos</a>
+      <h3>29/11</h3>
+      <p>Bar Maria Portuguesa</p>
+      <a class="btn" href="#">Ingressos</a>
     </div>
   </div>
 </section>
 
-<section id="press">
-  <h2>PRESS KIT</h2>
+<section id="contato">
+  <h2>Contato</h2>
   <div class="grid">
     <div class="card">
-      Biografia • Fotos • Rider<br><br>
-      <a href="#" class="btn">Download</a>
+      <p>📧 contato@bandabyo.com</p>
+      <p>📸 Instagram: @bandabyo</p>
+      <a class="btn" href="https://wa.me/5521999999999" target="_blank">WhatsApp</a>
     </div>
   </div>
 </section>
 
 <footer>
-  © Banda BYO • Todos os direitos reservados
+  <div class="social">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+    <a href="#"><i class="fab fa-spotify"></i></a>
+  </div>
+  <p>© Banda BYO</p>
 </footer>
-
-<a class="whatsapp"
-   href="https://wa.me/5521999999999"
-   target="_blank">WhatsApp</a>
 
 </body>
 </html>
